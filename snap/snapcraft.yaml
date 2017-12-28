@@ -1,0 +1,20 @@
+name: castnow-lool
+version: 0.4.14
+summary: Command-line Chromecast controller
+description: |
+  Castnow is a command-line utility that can be used to play back media files
+  on your Chromecast device. It supports playback of local video files, videos
+  on the web and torrents. You can also re-attach a running playback session.
+grade: stable
+confinement: strict
+
+apps:
+  castnow:
+    command: bin/castnow
+    plugs: [network]
+
+parts:
+  castnow:
+    plugin: nodejs
+    node-engine: 8.9.3
+    source: https://github.com/xat/castnow.git
